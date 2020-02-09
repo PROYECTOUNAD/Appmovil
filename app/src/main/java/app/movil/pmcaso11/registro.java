@@ -40,18 +40,6 @@ public class registro extends AppCompatActivity {
         }
 
 
-        btn1=(Button)findViewById(R.id.reg1);
-
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent second1 = new Intent(registro.this,registroUsu.class);
-
-                startActivity(second1);
-            }
-        });
-
         btn2=(Button)findViewById(R.id.apr1);
 
         btn2.setOnClickListener(new View.OnClickListener() {
