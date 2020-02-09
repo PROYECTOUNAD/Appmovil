@@ -53,6 +53,17 @@ public class registro extends AppCompatActivity {
         });
 
 
+        btn2=(Button)findViewById(R.id.apr1);
+
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent second2 = new Intent(registro.this,registroUsu.class);
+
+                startActivity(second2);
+            }
+        });
 
     }
 
