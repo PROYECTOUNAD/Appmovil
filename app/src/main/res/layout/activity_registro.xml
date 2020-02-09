@@ -25,11 +25,10 @@
         android:layout_height="wrap_content"
         android:text="Green Zone"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/reg1"
+        app:layout_constraintBottom_toTopOf="@+id/apr1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -40,17 +39,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@mipmap/ic_launcher_reciclaje" />
-
-    <Button
-        android:id="@+id/reg1"
-        android:layout_width="200dp"
-        android:layout_height="61dp"
-        android:layout_marginBottom="4dp"
-        android:text="Registro"
-        app:layout_constraintBottom_toTopOf="@+id/apr1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/apr1"
