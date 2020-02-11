@@ -1,15 +1,24 @@
 package app.movil.pmcaso11;
 
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
+import static android.widget.Toast.LENGTH_LONG;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btn; // Crear variables de tipo Objeto
+    private Button btn; // Crear variables de tipo
+    private final String GREETER=" REGISTRATE";
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,11 +32,21 @@ public class MainActivity extends AppCompatActivity {
           @Override
           public void onClick(View v) {
 
-              Intent second = new Intent(MainActivity.this,login.class);
+              Intent second = new Intent(MainActivity.this,registro.class);
+              second.putExtra("msn",GREETER);
               startActivity(second);
           }
       });
+
+
+
         }
+
+
+
+
+
+
 }
 
 
