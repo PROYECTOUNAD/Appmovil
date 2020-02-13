@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_reciclaje_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".aprende"></activity>
+        <activity android:name=".testdb"></activity>
+        <activity android:name=".aprende" />
         <activity android:name=".registroUsu" />
         <activity android:name=".registro" />
         <activity android:name=".MainActivity">

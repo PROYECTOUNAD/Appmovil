@@ -46,7 +46,7 @@ public class registro extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent second2 = new Intent(registro.this,registroUsu.class);
+                Intent second2 = new Intent(registro.this,testdb.class);
 
                 startActivity(second2);
             }

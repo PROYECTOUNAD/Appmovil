@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import android.view.View;
@@ -14,7 +15,7 @@ import static android.widget.Toast.LENGTH_LONG;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btn;
+    private Button btn; // Crear variables de tipo
     private final String GREETER=" REGISTRATE";
 
 
@@ -37,8 +38,9 @@ public class MainActivity extends AppCompatActivity {
           }
       });
 
-/*comentario*/
 
+
+        }
 
 
 
@@ -49,4 +51,4 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-}
+
