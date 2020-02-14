@@ -25,7 +25,7 @@ public class testdb extends AppCompatActivity {
 
     }
 
-    //METODO PARA AGREGAR UN USUARIO
+    /* Metodo para agregar un Usuario*/
 
     public void registrar(View view){
 
@@ -66,7 +66,7 @@ public class testdb extends AppCompatActivity {
 
     }
 
-    // METODO PARA BUSCAR UN USUARIO
+    /* Metodos para buscar un Usuario*/
 
     public void buscar(View view){
 
@@ -77,7 +77,7 @@ public class testdb extends AppCompatActivity {
 
         if(!codigo.isEmpty()){
 
-            Cursor registro =db.rawQuery("select nombreUsuario, apellidoUsuario from usuario where idUsuario="+codigo, null);
+            Cursor registro =db.rawQuery("select nombreUsuario, apellidoUsuario from usuario where idDocumento=" +codigo, null);
 
             if(registro.moveToFirst()){
 
@@ -97,11 +97,46 @@ public class testdb extends AppCompatActivity {
         }
 
 
+    }
+
+
+
+
+    /* metodo par eliminar un Usuario */
+
+
+    public void eliminar(View view){
+
+        AdminSqliteOpenHelper admin= new AdminSqliteOpenHelper(this,"greendb",null,1);
+        SQLiteDatabase db =admin.getWritableDatabase();
+
+        String codigo= id.getText().toString();
+
+        if(!codigo.isEmpty()){
+
+            int valor=db.delete("usuario","iDdocumento="+codigo,null);
+
+            db.close();
+
+            id.setText(""); /* Limpiar Campos*/
+            nombre.setText("");
+            apellido.setText("");
+
+
+        }else{
+
+            Toast.makeText(this,"DEBE INTRODUCIR UN NUMERO DE CEDULA",Toast.LENGTH_LONG).show();
+
+
+        }
 
 
 
 
     }
+
+
+
 
 
 
