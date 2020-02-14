@@ -122,6 +122,19 @@ public class testdb extends AppCompatActivity {
             nombre.setText("");
             apellido.setText("");
 
+            if(valor==1){
+
+                Toast.makeText(this,"REGISTRO ELIMINADO",Toast.LENGTH_LONG).show();
+
+
+            }else{
+
+
+                Toast.makeText(this,"EL DOCUMENTO NO EXISTE",Toast.LENGTH_LONG).show();
+
+            }
+
+
 
         }else{
 
