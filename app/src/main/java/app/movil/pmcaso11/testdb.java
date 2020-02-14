@@ -135,16 +135,11 @@ public class testdb extends AppCompatActivity {
             }
 
 
-
         }else{
 
             Toast.makeText(this,"DEBE INTRODUCIR UN NUMERO DE CEDULA",Toast.LENGTH_LONG).show();
 
-
         }
-
-
-
 
     }
 
