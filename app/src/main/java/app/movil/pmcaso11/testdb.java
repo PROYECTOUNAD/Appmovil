@@ -29,7 +29,7 @@ public class testdb extends AppCompatActivity {
 
     public void registrar(View view){
 
-        AdminSqliteOpenHelper admin =new AdminSqliteOpenHelper(this,"greendb",null,1); // Creacion de base de datos
+        AdminSqliteOpenHelper admin =new AdminSqliteOpenHelper(this,"green",null,1); // Creacion de base de datos
         SQLiteDatabase db =admin.getWritableDatabase(); // Abrir la bases de datos en modo lectura y escritura
 
         String iden=id.getText().toString(); // conversion de los datos
@@ -48,7 +48,7 @@ public class testdb extends AppCompatActivity {
             datos.put("apellidoUsuario",ape);
 
 
-            db.insert("usuario",null, datos);
+            db.insert("usuarios",null, datos);
             db.close();
 
             id.setText("");
@@ -70,14 +70,14 @@ public class testdb extends AppCompatActivity {
 
     public void buscar(View view){
 
-        AdminSqliteOpenHelper admin =new AdminSqliteOpenHelper(this,"greendb",null,1 );
+        AdminSqliteOpenHelper admin =new AdminSqliteOpenHelper(this,"green",null,1 );
         SQLiteDatabase db =admin.getWritableDatabase();
 
         String codigo= id.getText().toString();
 
         if(!codigo.isEmpty()){
 
-            Cursor registro =db.rawQuery("select nombreUsuario, apellidoUsuario from usuario where idDocumento=" +codigo, null);
+            Cursor registro =db.rawQuery("select nombreUsuario, apellidoUsuario from usuarios where idDocumento=" +codigo, null);
 
             if(registro.moveToFirst()){
 
@@ -107,14 +107,14 @@ public class testdb extends AppCompatActivity {
 
     public void eliminar(View view){
 
-        AdminSqliteOpenHelper admin= new AdminSqliteOpenHelper(this,"greendb",null,1);
+        AdminSqliteOpenHelper admin= new AdminSqliteOpenHelper(this,"green",null,1);
         SQLiteDatabase db =admin.getWritableDatabase();
 
         String codigo= id.getText().toString();
 
         if(!codigo.isEmpty()){
 
-            int valor=db.delete("usuario","iDdocumento="+codigo,null);
+            int valor=db.delete("usuarios","iDdocumento="+codigo,null);
 
             db.close(); /*Cerrar conexion de la base de datos */
 
@@ -148,7 +148,7 @@ public class testdb extends AppCompatActivity {
 
     public void actualizar (View view){
 
-            AdminSqliteOpenHelper admin= new AdminSqliteOpenHelper(this,"greendb",null,1);
+            AdminSqliteOpenHelper admin= new AdminSqliteOpenHelper(this,"green",null,1);
             SQLiteDatabase db =admin.getWritableDatabase();
 
             String identificacion=id.getText().toString();
@@ -164,7 +164,7 @@ public class testdb extends AppCompatActivity {
                 registro.put("apellidoUsuario",ape);
 
 
-                int contador=db.update("usuario",registro,"idDocumento="+identificacion,null);
+                int contador=db.update("usuarios",registro,"idDocumento="+identificacion,null);
 
                 db.close();
 
