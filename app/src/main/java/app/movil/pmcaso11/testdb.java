@@ -116,7 +116,7 @@ public class testdb extends AppCompatActivity {
 
             int valor=db.delete("usuario","iDdocumento="+codigo,null);
 
-            db.close();
+            db.close(); /*Cerrar conexion de la base de datos */
 
             id.setText(""); /* Limpiar Campos*/
             nombre.setText("");
@@ -140,6 +140,57 @@ public class testdb extends AppCompatActivity {
             Toast.makeText(this,"DEBE INTRODUCIR UN NUMERO DE CEDULA",Toast.LENGTH_LONG).show();
 
         }
+
+    }
+
+    /* Metodo para Actualizar un usuario */
+
+
+    public void actualizar (View view){
+
+            AdminSqliteOpenHelper admin= new AdminSqliteOpenHelper(this,"greendb",null,1);
+            SQLiteDatabase db =admin.getWritableDatabase();
+
+            String identificacion=id.getText().toString();
+            String nom=nombre.getText().toString();
+            String ape=apellido.getText().toString();
+
+            if(!identificacion.isEmpty() && !nom.isEmpty() && !ape.isEmpty() ){
+
+                ContentValues registro=new ContentValues();
+
+                registro.put("idDocumento",identificacion );  //Asociar los datos de las variables a los campos
+                registro.put("nombreUsuario",nom);
+                registro.put("apellidoUsuario",ape);
+
+
+                int contador=db.update("usuario",registro,"idDocumento="+identificacion,null);
+
+                db.close();
+
+                    if(contador==1){
+
+                        Toast.makeText(this,"REGISTRO ACTUALIZADO CORRECTAMENTE ",Toast.LENGTH_LONG).show();
+
+                        id.setText(""); /* Limpiar Campos*/
+                        nombre.setText("");
+                        apellido.setText("");
+
+                    }
+
+
+            } else{
+
+
+                    Toast.makeText(this,"DEBE LLENAR TODOS LOS REGISTROS ",Toast.LENGTH_LONG).show();
+
+
+        }
+
+
+
+
+
 
     }
 

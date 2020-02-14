@@ -22,7 +22,7 @@ public class registro extends AppCompatActivity {
         setContentView(R.layout.activity_registro);
 
 
-
+/*
         Bundle mensaje=getIntent().getExtras();
 
         if(mensaje!=null){
@@ -38,7 +38,7 @@ public class registro extends AppCompatActivity {
 
 
         }
-
+*/
 
         btn2=(Button)findViewById(R.id.apr1);
 

@@ -45,7 +45,7 @@
         android:layout_width="200dp"
         android:layout_height="61dp"
         android:layout_marginBottom="20dp"
-        android:text="Aprende a Reciclar"
+        android:text="REGISTRO TEST PRUEBA DB"
         app:layout_constraintBottom_toTopOf="@+id/acum1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
