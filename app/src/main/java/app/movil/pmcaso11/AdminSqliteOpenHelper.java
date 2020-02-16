@@ -31,13 +31,16 @@ public class AdminSqliteOpenHelper extends SQLiteOpenHelper {
                     "idRol int," +
                     "nombreUsuario varchar(20)," +
                     "apellidoUsuario varchar(20)," +
-                    "idCiudad int," +
+                    "idCiudad int, " +
+                    "idPais int," +
                     "direcUsuario varchar(10)," +
                     "emailUsuario varchar(20), " +
                     "telefonoUsuario int," +
                     "passUsuario varchar(8)," +
                     "foreign key (idRol) references rol (idRol)," +
-                    "foreign key(tipoDocumento)references documento(idDocumento) )");
+                    "foreign key(tipoDocumento)references documento(idDocumento)," +
+                    "foreign key (idCiudad) references ciudad(idCiudad)," +
+                    "foreign key (idPais) references pais(idPais))");
 
 
             db.execSQL("create table rol(idRol int primary key autoincrement," +
@@ -74,6 +77,46 @@ public class AdminSqliteOpenHelper extends SQLiteOpenHelper {
                         "valorPago real," +
                         "descPago varchar(15)," +
                         "foreign key (idDocumento) references usuario(idDocumento))");
+
+            db.execSQL("create table ciudad(idCiudad int primary key autoincrement," +
+                        "nomCiudad varchar(10)," +
+                        "idPais,foreign key (idPais) references pais(idpais))");
+
+            db.execSQL("create table reciclaje(idNumero int primary key autoincrement," +
+                        "idDocumento int," +
+                        "idZona int ," +
+                        "fechaReciclaje text," +
+                        "idCategoria int," +
+                        "idMedida int," +
+                        "desReciclaje varchar(35)," +
+                        "cantReciclaje real," +
+                        "valorReciclaje real,foreign key (idDocumento) references usuario(idDocumento)," +
+                        "foreign key (idMedida) references medida(idMedida)," +
+                        "foreign key (idCategoria) references categoria(idCategoria)," +
+                        "foreign key (idZona) references zona(idZona))");
+
+
+            db.execSQL("create table medida(idMedida int primary key autoincrement," +
+                        "unMedida char(2)," +
+                        "desMedida varchar(15))");
+
+            db.execSQL("create table categoria(idCategoria int primary key autoincrement," +
+                        "nomCategoria varchar(25)," +
+                        "desCategoria varchar(25))");
+
+
+            db.execSQL("create table zona(idZona int primary key autoincrement," +
+                        "idZona int," +
+                        "nombreZona varchar(20)," +
+                        "direccZona varchar(25)," +
+                        "telZona int," +
+                        "localidadZona varchar(30))");
+
+
+            db.execSQL("create table pais(idPais int primary key autoincrement," +
+                        "nomPais varchar(20))");
+
+
 
 
 
