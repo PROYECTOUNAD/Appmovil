@@ -36,6 +36,7 @@ public class testdb extends AppCompatActivity {
         String nom=nombre.getText().toString();
         String ape=apellido.getText().toString();
 
+
         //int valor=Integer.parseInt(iden);
 
 

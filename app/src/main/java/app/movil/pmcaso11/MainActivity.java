@@ -15,8 +15,7 @@ import static android.widget.Toast.LENGTH_LONG;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btn; // Crear variables de tipo
-    private final String GREETER=" REGISTRATE";
+    private Button btn; // Crear variables de tipo Objeto
 
 
 
@@ -32,8 +31,7 @@ public class MainActivity extends AppCompatActivity {
           @Override
           public void onClick(View v) {
 
-              Intent second = new Intent(MainActivity.this,registro.class);
-              second.putExtra("msn",GREETER);
+              Intent second = new Intent(MainActivity.this,login.class);
               startActivity(second);
           }
       });
