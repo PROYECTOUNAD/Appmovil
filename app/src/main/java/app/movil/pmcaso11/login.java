@@ -1,28 +1,41 @@
 package app.movil.pmcaso11;
 
+<<<<<<< HEAD
+=======
+import androidx.appcompat.app.AppCompatActivity;
+
+>>>>>>> Creacion de Campos Formulario Registro
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+<<<<<<< HEAD
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+=======
+>>>>>>> Creacion de Campos Formulario Registro
 
 public class login extends AppCompatActivity {
 
     private Button registro;
+<<<<<<< HEAD
     private Button ingreso;
     private EditText user;
     private EditText clave;
     private TextView recovery;
+=======
+
+>>>>>>> Creacion de Campos Formulario Registro
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login2);
 
+<<<<<<< HEAD
         registro =(Button)findViewById(R.id.registrar);
         ingreso=(Button)findViewById(R.id.ingresar);
         user=(EditText)findViewById(R.id.usuario);
@@ -58,6 +71,21 @@ public class login extends AppCompatActivity {
 
         Intent recovery = new Intent ( login.this, RecoveryPassword.class );
         startActivity(recovery);
+=======
+        registro = (Button) findViewById(R.id.registrar);
+
+
+            registro.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                        Intent second = new Intent(login.this,registroUsu.class);
+                        startActivity(second);
+
+                }
+            });
+
+>>>>>>> Creacion de Campos Formulario Registro
     }
 
 }

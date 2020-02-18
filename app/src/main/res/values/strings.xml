@@ -1,24 +1,3 @@
 <resources>
     <string name="app_name">Green Zone</string>
-    <string name="title_activity_login">Iniciar Sesion</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
-    <string name="edittext">Campo1</string>
-    <string name="edittext1">CAMPO1</string>
-    <string name="edittext2">CAMPO2</string>
-    <string name="boton">Calcular</string>
-    <string name="texview">Green - Zone</string>
-    <string name="btnUbicacion">Zonas de Reciclaje</string>
-    <string name="btnMiUbicacion">Mi Ubicacion</string>
-    <string name="title_activity_recover_password">activity_recover_password</string>
-    <string name="title_activity_zonas">Map</string>
-    <string name="recicla_papel">RECICLAJE DE PAPEL</string>
-    <string name="recicla_vidrio">RECICLAJE DE VIDRIO</string>
-    <string name="recicla_Plastico">RECICLAJE DE PLASTICO</string>
 </resources>
