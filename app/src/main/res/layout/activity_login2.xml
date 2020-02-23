@@ -47,7 +47,7 @@
         android:layout_height="43dp"
         android:layout_marginBottom="52dp"
         android:ems="10"
-        android:hint="Password"
+        android:hint="********"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/ingresar"
         app:layout_constraintEnd_toEndOf="parent"

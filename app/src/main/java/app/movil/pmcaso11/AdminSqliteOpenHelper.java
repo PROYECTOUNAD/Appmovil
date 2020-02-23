@@ -17,34 +17,20 @@ public class AdminSqliteOpenHelper extends SQLiteOpenHelper {
     @Override
         public void onCreate(SQLiteDatabase db) {
 
-          //TABLA DE PRUEBAS
 
-            db.execSQL("create table usuarios(idDocumento int primary key,nombreUsuario varchar(20),apellidoUsuario varchar(20))");
+        /*** BASE DE DATOS PROYECTO GREEN ZONE ****/
 
+            db.execSQL("create table usuario(idDocumento integer primary key," +
+                        "tipoDocumento text,nombreUsuario text,apellidoUsuario text,idCiudad text,idPais text,idRol integer,direcUsuario text,emailUsuario text,telefonoUsuario integer,passUsuario text)");
 
-
-
-            /* BASE DE DATOS PROYECTO GREEN ZONE */
-
-            db.execSQL("create table usuario(idDocumento int primary key," +
-                    "tipoDocumento int," +
-                    "idRol int," +
-                    "nombreUsuario varchar(20)," +
-                    "apellidoUsuario varchar(20)," +
-                    "idCiudad int, " +
-                    "idPais int," +
-                    "direcUsuario varchar(10)," +
-                    "emailUsuario varchar(20), " +
-                    "telefonoUsuario int," +
-                    "passUsuario varchar(8)," +
+            /*
                     "foreign key (idRol) references rol (idRol)," +
                     "foreign key(tipoDocumento)references documento(idDocumento)," +
                     "foreign key (idCiudad) references ciudad(idCiudad)," +
                     "foreign key (idPais) references pais(idPais))");
+            */
 
-
-            db.execSQL("create table rol(idRol int primary key autoincrement," +
-                        "nombreRol varchar(20))");
+            db.execSQL("create table rol(idRol integer not null primary key autoincrement,nombreRol text)");
 
 
             db.execSQL("create table permiso(idPermiso int primary key autoincrement," +
@@ -114,17 +100,22 @@ public class AdminSqliteOpenHelper extends SQLiteOpenHelper {
 
 
             db.execSQL("create table pais(idPais int primary key autoincrement," +
-                        "nomPais varchar(20))");
-
+                         "nomPais varchar(20))");
 
 
 
     }
-
-
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+
+
     }
+
+
+
+
+
+
 }

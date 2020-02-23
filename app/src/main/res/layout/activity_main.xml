@@ -50,8 +50,8 @@
         android:layout_width="366dp"
         android:layout_height="117dp"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="304dp"
-        android:text="Con nuestra app aprenderás, la correcta clasificación de las basuras para el reciclaje, aprendera nuestro sistema de puntos, al mismo tiempo que cuidas el planeta, podras obtener descuento en tus servicios publicos y compras, registrate y forma parte del nuevo cambio. "
+        android:layout_marginTop="332dp"
+        android:text="Con nuestra app aprenderás, la correcta clasificación de las basuras para el buen manejo de  reciclaje, aprenderas sobre nuestro sistema de puntos, al mismo tiempo que cuidas el planeta, podras obtener descuento en tus servicios publicos y compras, registrate y forma parte del nuevo cambio. "
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.058"
@@ -65,9 +65,8 @@
         android:text="Continuar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:layout_constraintVertical_bias="0.142" />
+        app:layout_constraintVertical_bias="0.339" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

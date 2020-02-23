@@ -9,4 +9,8 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="edittext">Campo1</string>
+    <string name="edittext1">CAMPO1</string>
+    <string name="edittext2">CAMPO2</string>
+    <string name="boton">Calcular</string>
 </resources>
