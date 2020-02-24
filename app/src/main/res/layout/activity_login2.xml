@@ -29,42 +29,23 @@
 
     <EditText
         android:id="@+id/usuario"
-<<<<<<< HEAD
         android:layout_width="273dp"
         android:layout_height="47dp"
         android:layout_marginBottom="12dp"
-=======
-        android:layout_width="207dp"
-        android:layout_height="43dp"
-        android:layout_marginEnd="96dp"
-        android:layout_marginBottom="16dp"
->>>>>>> Creacion de Campos Formulario Registro
         android:ems="10"
         android:hint="Usuario"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/pass"
         app:layout_constraintEnd_toEndOf="parent"
-<<<<<<< HEAD
-=======
-        app:layout_constraintHorizontal_bias="0.944"
->>>>>>> Creacion de Campos Formulario Registro
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/pass"
-<<<<<<< HEAD
         android:layout_width="273dp"
         android:layout_height="47dp"
-        android:layout_marginBottom="16dp"
-        android:ems="10"
-        android:hint="********"
-=======
-        android:layout_width="207dp"
-        android:layout_height="43dp"
         android:layout_marginBottom="52dp"
         android:ems="10"
-        android:hint="Password"
->>>>>>> Creacion de Campos Formulario Registro
+        android:hint="********"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/ingresar"
         app:layout_constraintEnd_toEndOf="parent"
@@ -72,61 +53,24 @@
 
     <Button
         android:id="@+id/ingresar"
-<<<<<<< HEAD
         android:layout_width="238dp"
         android:layout_height="43dp"
-        android:layout_marginBottom="8dp"
-        android:backgroundTint="@color/colorPrimary"
+        android:layout_marginBottom="16dp"
         android:onClick="ingresar"
         android:text="INGRESAR"
-        android:textColor="@color/colorBlanco"
         app:layout_constraintBottom_toTopOf="@+id/registrar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-=======
-        android:layout_width="195dp"
-        android:layout_height="53dp"
-        android:layout_marginBottom="16dp"
-        android:text="INGRESAR"
-        app:layout_constraintBottom_toTopOf="@+id/registrar"
-        app:layout_constraintEnd_toEndOf="parent"
->>>>>>> Creacion de Campos Formulario Registro
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/registrar"
-<<<<<<< HEAD
         android:layout_width="239dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="32dp"
-        android:backgroundTint="@color/colorPrimary"
+        android:layout_marginBottom="168dp"
         android:onClick="registrar"
         android:text="REGISTRARSE"
-        android:textColor="@color/colorBlanco"
-        app:layout_constraintBottom_toTopOf="@+id/recovery"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/recovery"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="88dp"
-        android:clickable="true"
-        android:onClick="recovery"
-        android:text="Recuperar Contraseña"
-        android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.464"
-=======
-        android:layout_width="194dp"
-        android:layout_height="51dp"
-        android:layout_marginBottom="192dp"
-        android:text="REGISTRARSE"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
->>>>>>> Creacion de Campos Formulario Registro
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
