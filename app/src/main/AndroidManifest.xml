@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_reciclaje_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".cargar"></activity>
+        <activity android:name=".activity_recover_password_new"></activity>
+        <activity android:name=".cargar" />
         <activity android:name=".login" />
         <activity
             android:name=".ui.login.LoginActivity"
