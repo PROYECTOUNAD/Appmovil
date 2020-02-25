@@ -13,5 +13,6 @@
     <string name="edittext1">CAMPO1</string>
     <string name="edittext2">CAMPO2</string>
     <string name="boton">Calcular</string>
+    <string name="texview">Green - Zone</string>
     <string name="title_activity_recover_password">activity_recover_password</string>
 </resources>
