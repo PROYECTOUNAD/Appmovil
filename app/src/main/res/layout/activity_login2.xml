@@ -29,22 +29,20 @@
 
     <EditText
         android:id="@+id/usuario"
-        android:layout_width="207dp"
-        android:layout_height="43dp"
-        android:layout_marginEnd="96dp"
-        android:layout_marginBottom="16dp"
+        android:layout_width="273dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="12dp"
         android:ems="10"
         android:hint="Usuario"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/pass"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.944"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/pass"
-        android:layout_width="207dp"
-        android:layout_height="43dp"
+        android:layout_width="273dp"
+        android:layout_height="47dp"
         android:layout_marginBottom="52dp"
         android:ems="10"
         android:hint="********"
@@ -55,9 +53,10 @@
 
     <Button
         android:id="@+id/ingresar"
-        android:layout_width="195dp"
-        android:layout_height="53dp"
+        android:layout_width="238dp"
+        android:layout_height="43dp"
         android:layout_marginBottom="16dp"
+        android:onClick="ingresar"
         android:text="INGRESAR"
         app:layout_constraintBottom_toTopOf="@+id/registrar"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,12 +64,13 @@
 
     <Button
         android:id="@+id/registrar"
-        android:layout_width="194dp"
-        android:layout_height="51dp"
-        android:layout_marginBottom="192dp"
+        android:layout_width="239dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="168dp"
+        android:onClick="registrar"
         android:text="REGISTRARSE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,15 +9,16 @@
         android:roundIcon="@mipmap/ic_reciclaje_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".cargar"></activity>
+        <activity android:name=".principal"></activity>
+        <activity android:name=".categorias" />
+        <activity android:name=".bienvenido" />
+        <activity android:name=".cargar" />
         <activity android:name=".login" />
         <activity
             android:name=".ui.login.LoginActivity"
             android:label="@string/title_activity_login" />
         <activity android:name=".testdb" />
-        <activity android:name=".aprende" />
         <activity android:name=".registroUsu" />
-        <activity android:name=".registro" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
