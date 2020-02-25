@@ -10,67 +10,83 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Green Zone"
+        android:layout_marginBottom="24dp"
+        android:text="@string/texview"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView4"
+        app:layout_constraintBottom_toTopOf="@+id/usuario"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="135dp"
         android:layout_height="102dp"
-        android:layout_marginBottom="60dp"
-        app:layout_constraintBottom_toTopOf="@+id/usuario"
+        android:layout_marginBottom="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.568"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@mipmap/ic_launcher_reciclaje" />
 
     <EditText
         android:id="@+id/usuario"
-        android:layout_width="273dp"
-        android:layout_height="47dp"
-        android:layout_marginBottom="12dp"
+        android:layout_width="207dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="16dp"
         android:ems="10"
         android:hint="Usuario"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/pass"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/pass"
-        android:layout_width="273dp"
-        android:layout_height="47dp"
-        android:layout_marginBottom="52dp"
+        android:layout_width="207dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="20dp"
         android:ems="10"
         android:hint="********"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/ingresar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.534"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/ingresar"
-        android:layout_width="238dp"
-        android:layout_height="43dp"
+        android:layout_width="195dp"
+        android:layout_height="53dp"
         android:layout_marginBottom="16dp"
-        android:onClick="ingresar"
         android:text="INGRESAR"
         app:layout_constraintBottom_toTopOf="@+id/registrar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/registrar"
-        android:layout_width="239dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="168dp"
-        android:onClick="registrar"
+        android:layout_width="194dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="64dp"
         android:text="REGISTRARSE"
+        app:layout_constraintBottom_toTopOf="@+id/recuperar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/recuperar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="124dp"
+        android:text="Recuperar Password"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
