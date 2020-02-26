@@ -21,14 +21,21 @@ public class AdminSqliteOpenHelper extends SQLiteOpenHelper {
         /*** BASE DE DATOS PROYECTO GREEN ZONE ****/
 
             db.execSQL("create table usuario(idDocumento integer primary key," +
-                        "tipoDocumento text,nombreUsuario text,apellidoUsuario text,idCiudad text,idPais text,idRol integer,direcUsuario text,emailUsuario text,telefonoUsuario integer,passUsuario text)");
+                        "tipoDocumento text," +
+                        "nombreUsuario text," +
+                        "apellidoUsuario text," +
+                        "idCiudad text," +
+                        "idPais text," +
+                        "idRol integer," +
+                        "direcUsuario text," +
+                        "emailUsuario text," +
+                        "telefonoUsuario integer," +
+                        "passUsuario text,"+
+                        "foreign key (idRol) references rol (idRol)," +
+                        "foreign key(tipoDocumento)references documento(idDocumento)," +
+                        "foreign key (idCiudad) references ciudad(idCiudad)," +
+                        "foreign key (idPais) references pais(idPais))");
 
-            /*
-                    "foreign key (idRol) references rol (idRol)," +
-                    "foreign key(tipoDocumento)references documento(idDocumento)," +
-                    "foreign key (idCiudad) references ciudad(idCiudad)," +
-                    "foreign key (idPais) references pais(idPais))");
-            */
 
             db.execSQL("create table rol(idRol integer not null primary key autoincrement,nombreRol text)");
 
@@ -103,11 +110,13 @@ public class AdminSqliteOpenHelper extends SQLiteOpenHelper {
                          "nomPais varchar(20))");
 
 
-
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+
+
 
 
 
