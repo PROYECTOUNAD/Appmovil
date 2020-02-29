@@ -33,4 +33,8 @@ dependencies {
     implementation files('Libs\\activation.jar')
     implementation files('Libs\\additionnal.jar')
     implementation files('Libs\\mail.jar')
+    implementation fileTree(dir: 'Libs', include: ['*.aar', '*.jar'], exclude: [])
+    implementation files('Libs\\activation.jar')
+    implementation files('Libs\\additionnal.jar')
+    implementation files('Libs\\mail.jar')
 }
