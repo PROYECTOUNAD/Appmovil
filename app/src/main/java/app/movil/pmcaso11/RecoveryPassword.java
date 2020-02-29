@@ -35,8 +35,7 @@ public class RecoveryPassword extends AppCompatActivity implements OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_recovery_password);
 
         context = this;
 
