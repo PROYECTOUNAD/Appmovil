@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class login extends AppCompatActivity {
@@ -17,6 +18,7 @@ public class login extends AppCompatActivity {
     private Button ingreso;
     private EditText user;
     private EditText clave;
+    private TextView recovery;
 
 
     @Override
@@ -28,8 +30,7 @@ public class login extends AppCompatActivity {
         ingreso=(Button)findViewById(R.id.ingresar);
         user=(EditText)findViewById(R.id.usuario);
         clave=(EditText)findViewById(R.id.pass);
-
-
+        recovery=(TextView)findViewById(R.id.recovery);
     }
 
         public void ingresar(View view){
@@ -68,12 +69,18 @@ public class login extends AppCompatActivity {
             Intent second = new Intent(login.this,registroUsu.class);
             startActivity(second);
 
-
-
         }
 
 
+        public void recovery(View view){
+
+        Intent recovery = new Intent ( login.this, RecoveryPassword.class );
+        startActivity(recovery);
 
 
+
+
+
+    }
 
 }
