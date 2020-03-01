@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "576006364711",
+    "firebase_url": "https://greenzone-269721.firebaseio.com",
+    "project_id": "greenzone-269721",
+    "storage_bucket": "greenzone-269721.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:576006364711:android:a53ba7c3606fa92b007802",
+        "android_client_info": {
+          "package_name": "app.movil.pmcaso11"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "576006364711-ca2ikq1pkoo6obo9nhpq1gpud6sdtp60.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "app.movil.pmcaso11",
+            "certificate_hash": "a9c56ac8f2ae717df29268ed19de72228f13f49f"
+          }
+        },
+        {
+          "client_id": "576006364711-rritt1mf6g5mv6g35cm5dkefih9mkhr6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZDi7dZCDyzASrD1Nzi4s_omqSxAbHXs0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "576006364711-rritt1mf6g5mv6g35cm5dkefih9mkhr6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
