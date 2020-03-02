@@ -149,11 +149,13 @@
 
     <Button
         android:id="@+id/registrar"
-        android:layout_width="363dp"
-        android:layout_height="52dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="44dp"
+        android:background="#039235"
         android:onClick="registrar"
         android:text="Registrar"
+        android:textColor="@color/colorBlanco"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

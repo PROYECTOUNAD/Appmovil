@@ -35,30 +35,23 @@ public class login extends AppCompatActivity {
 
         public void ingresar(View view){
 
-            AdminSqliteOpenHelper admin =new AdminSqliteOpenHelper(this,"DB15",null,1 );
+           /* AdminSqliteOpenHelper admin =new AdminSqliteOpenHelper(this,"DB15",null,1 );
             SQLiteDatabase db =admin.getReadableDatabase();
             String us=user.getText().toString();
             String cl=clave.getText().toString();
 
             Cursor registro =db.rawQuery("select emailUsuario, passUsuario from usuario where emailUsuario="+"'us'"+"and passUsuario="+"'cl'", null);
 
-            if(registro.moveToFirst()){
 
+*/
 
-                Intent second = new Intent(login.this,bienvenido.class);
+                Intent second = new Intent(login.this,principal.class);
                 startActivity(second);
 
                 Toast.makeText(this,"BIENVENIDO",Toast.LENGTH_LONG).show();
-                db.close();
 
 
-            }else{
 
-
-                Toast.makeText(this,"USUARIO O PASSWORD INCORRECTO",Toast.LENGTH_LONG).show();
-                db.close();
-
-            }
 
 
         }
