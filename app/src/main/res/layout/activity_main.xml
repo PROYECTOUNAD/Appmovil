@@ -10,14 +10,13 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_width="301dp"
+        android:layout_height="62dp"
+        android:layout_marginBottom="16dp"
         android:text="Green Zone"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/textView5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
@@ -47,8 +46,8 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="331dp"
-        android:layout_height="152dp"
+        android:layout_width="326dp"
+        android:layout_height="150dp"
         android:fontFamily="@font/asap"
         android:text="Con nuestra app aprenderás, la correcta clasificación de las basuras para el buen manejo de  reciclaje, aprenderas sobre nuestro sistema de puntos, al mismo tiempo que cuidas el planeta, podras obtener descuento en tus servicios publicos y compras, registrate y forma parte del nuevo cambio. "
         android:textAlignment="viewStart"
@@ -75,7 +74,7 @@
         android:id="@+id/imageView9"
         android:layout_width="293dp"
         android:layout_height="177dp"
-        android:layout_marginBottom="124dp"
+        android:layout_marginBottom="68dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
