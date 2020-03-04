@@ -11,6 +11,7 @@ import android.widget.Toast;
 public class principal extends AppCompatActivity {
 
     private Button zonas;
+    private Button aprende;
 
 
     @Override
@@ -19,6 +20,7 @@ public class principal extends AppCompatActivity {
         setContentView(R.layout.activity_principal);
 
         zonas=(Button)findViewById(R.id.zonasR);
+        aprende=(Button)findViewById(R.id.aprendeR);
 
         zonas.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +33,20 @@ public class principal extends AppCompatActivity {
 
             }
         });
+
+
+        aprende.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent second = new Intent(principal.this,categorias.class);
+                startActivity(second);
+
+
+            }
+        });
+
+
 
 
     }
