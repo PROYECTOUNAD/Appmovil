@@ -2,9 +2,12 @@ package app.movil.pmcaso11;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.MediaController;
+import android.widget.VideoView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +15,9 @@ import java.util.List;
 public class categorias extends AppCompatActivity {
 
 
-    private ListView lista;
+    private VideoView videor;
+
+
 
 
     @Override
@@ -20,14 +25,16 @@ public class categorias extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categorias);
 
-        lista = (ListView) findViewById(R.id.lista);
+        videor=(VideoView)findViewById(R.id.video);
 
-        List<String> nombres = new ArrayList<String>();
 
-        nombres.add("Diego");
+        Uri uri= Uri.parse("https://www.youtube.com/watch?v=YiHTNfKJwAw");
+        videor.setMediaController((new MediaController(this)) );
+        videor.setVideoURI(uri);
+        videor.requestFocus();
+        videor.start();
 
-        ArrayAdapter<String> adaptador=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,nombres);
 
-        lista.setAdapter(adaptador);
+
     }
 }

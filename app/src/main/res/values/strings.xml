@@ -18,4 +18,7 @@
     <string name="btnMiUbicacion">Mi Ubicacion</string>
     <string name="title_activity_recover_password">activity_recover_password</string>
     <string name="title_activity_zonas">Map</string>
+    <string name="recicla_papel">RECICLAJE DE PAPEL</string>
+    <string name="recicla_vidrio">RECICLAJE DE VIDRIO</string>
+    <string name="recicla_Plastico">RECICLAJE DE PLASTICO</string>
 </resources>
