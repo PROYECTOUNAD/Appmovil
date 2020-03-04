@@ -11,19 +11,25 @@
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/recicla_papel" />
+        android:backgroundTint="#039235"
+        android:text="@string/recicla_papel"
+        android:textColor="@color/colorBlanco" />
 
     <Button
         android:id="@+id/button4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/recicla_Plastico" />
+        android:backgroundTint="#039235"
+        android:text="@string/recicla_Plastico"
+        android:textColor="@color/colorBlanco" />
 
     <Button
         android:id="@+id/button5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/recicla_vidrio" />
+        android:backgroundTint="#039235"
+        android:text="@string/recicla_vidrio"
+        android:textColor="@color/colorBlanco" />
 
     <FrameLayout
         android:layout_width="match_parent"
