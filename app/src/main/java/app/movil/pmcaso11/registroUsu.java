@@ -3,23 +3,34 @@ package app.movil.pmcaso11;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class registroUsu extends AppCompatActivity {
 
-    private EditText numero1;
-    private EditText numero2;
-    private Button Boton;
-    private TextView Resultado;
+    private Spinner despliegue;
+    private Spinner pais;
+    private Spinner ciudad;
+    private EditText identificacion, nombre, apellido, direccion, email, telefono, password;
+    private Integer tipod;
+    private Integer country;
+    private Integer ciud;
 
+    private final Integer rol=1;
 
 
     @Override
@@ -27,47 +38,98 @@ public class registroUsu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registro_usu);
 
-       // numero1=(EditText) findViewById(R.id.numero1);
-       // numero2=(EditText) findViewById(R.id.numero2);
-       // Boton=(Button)findViewById(R.id.sumar);
-        //Resultado=(TextView) findViewById(R.id.resultado);
+        identificacion = (EditText) findViewById(R.id.doc);
+        nombre = (EditText) findViewById(R.id.nomUsuario);
+        apellido = (EditText) findViewById(R.id.apeUsuario);
+        direccion = (EditText) findViewById(R.id.direccion);
+        email = (EditText) findViewById(R.id.email);
+        telefono = (EditText) findViewById(R.id.telefono);
+        password = (EditText) findViewById(R.id.password);
 
 
+        //Spinner Tipo de Documento
 
-        }
+        despliegue = (Spinner) findViewById(R.id.tipodoc);
+        String Documento[]={"CEDULA","PASAPORTE","TI"};
+        ArrayAdapter<String> document=new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,Documento);
+        despliegue.setAdapter(document);
 
+        //Spinner Pais
 
-        public void suma(View vista){
+        pais = (Spinner) findViewById(R.id.pais);
+        String paises[]={"COLOMBIA"};
+        ArrayAdapter<String> document1=new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,paises);
+        pais.setAdapter(document1);
 
-           String campo1=numero1.getText().toString(); // Traer los datos de los Campos
-           String campo2=numero2.getText().toString();
-
-           int n1=Integer.parseInt(campo1); // Conversion de String a Entero
-           int n2=Integer.parseInt(campo2); // conversion de String a Entero
-
-            int suma=n1+n2;
-            String res=String.valueOf(suma);
-
-            Resultado.setText(res); // Mostrar Resultado
-
-
-            /** if(n1!=0 && n2!=0){
+        //Spinner Ciudad
 
 
-             }else {
-
-                 Toast.makeText(registroUsu.this,mensaje, Toast.LENGTH_LONG).show();
-
-             }*/
-
-
-          }
+        ciudad = (Spinner) findViewById(R.id.ciudad);
+        String ciudades[]={"BOGOTA","MEDELLIN","CALI"};
+        ArrayAdapter<String> document2=new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,ciudades);
+        ciudad.setAdapter(document2);
 
 
 
 
+    }
 
-  }
+
+        public void registrar(View view){
+
+
+            AdminSqliteOpenHelper admin =new AdminSqliteOpenHelper(this,"DB15",null,1); // Creacion de base de datos
+            SQLiteDatabase db =admin.getWritableDatabase();
+
+            String seleccion=despliegue.getSelectedItem().toString();
+            String seleccion1=pais.getSelectedItem().toString();
+            String seleccion2=ciudad.getSelectedItem().toString();
+            String iden=identificacion.getText().toString();
+            String nom=nombre.getText().toString();
+            String ape=apellido.getText().toString();
+            String dir=direccion.getText().toString();
+            String correo=email.getText().toString();
+            String tel=telefono.getText().toString();
+            String pass=password.getText().toString();
+
+            int cc=Integer.parseInt(iden);
+            int tele=Integer.parseInt(tel);
+
+
+            ContentValues datos=new ContentValues();
+
+            datos.put("idDocumento",cc);
+            datos.put("tipoDocumento",seleccion);
+            datos.put("idRol",rol);
+            datos.put("nombreUsuario",nom);
+            datos.put("apellidoUsuario",ape);
+            datos.put("idCiudad",seleccion2);
+            datos.put("idPais",seleccion1);
+            datos.put("direcUsuario",dir);
+            datos.put("emailUsuario",correo);
+            datos.put("telefonoUsuario",tele);
+            datos.put("passUsuario",pass);
+
+            db.insert("usuario",null, datos);
+            db.close();
+
+
+            Toast.makeText(this,"REGISTRO EXITOSO",Toast.LENGTH_LONG).show();
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+}
 
 
 

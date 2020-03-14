@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import android.view.View;
@@ -14,8 +15,7 @@ import static android.widget.Toast.LENGTH_LONG;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btn;
-    private final String GREETER=" REGISTRATE";
+    private Button btn; // Crear variables de tipo Objeto
 
 
 
@@ -31,14 +31,14 @@ public class MainActivity extends AppCompatActivity {
           @Override
           public void onClick(View v) {
 
-              Intent second = new Intent(MainActivity.this,registro.class);
-              second.putExtra("msn",GREETER);
+              Intent second = new Intent(MainActivity.this,login.class);
               startActivity(second);
           }
       });
 
-/*comentario*/
 
+
+        }
 
 
 
@@ -49,4 +49,4 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-}
+

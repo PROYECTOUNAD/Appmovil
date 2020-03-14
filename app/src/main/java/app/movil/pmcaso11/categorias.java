@@ -1,28 +1,40 @@
 package app.movil.pmcaso11;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.net.Uri;
 import android.os.Bundle;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
-import androidx.appcompat.app.AppCompatActivity;
+import java.util.ArrayList;
+import java.util.List;
 
 public class categorias extends AppCompatActivity {
-    private VideoView video_view;
+
+
+    private VideoView videor;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categorias);
 
-        VideoView videoView = findViewById(R.id.video_view);
-        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.video;
-        Uri uri = Uri.parse(videoPath);
-        videoView.setVideoURI(uri);
+        videor=(VideoView)findViewById(R.id.video);
 
-        MediaController mediaController = new MediaController(this);
-        videoView.setMediaController(mediaController);
-        mediaController.setAnchorView(videoView);
-        videoView.start();
+
+        Uri uri= Uri.parse("https://www.youtube.com/watch?v=YiHTNfKJwAw");
+        videor.setMediaController((new MediaController(this)) );
+        videor.setVideoURI(uri);
+        videor.requestFocus();
+        videor.start();
+
+
+
     }
 }
