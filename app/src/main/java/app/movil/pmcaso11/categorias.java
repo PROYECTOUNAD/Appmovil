@@ -1,33 +1,28 @@
 package app.movil.pmcaso11;
 
+import android.net.Uri;
+import android.os.Bundle;
+import android.widget.MediaController;
+import android.widget.VideoView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class categorias extends AppCompatActivity {
-
-
-    private ListView lista;
-
+    private VideoView video_view;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_categorias);
 
-        lista = (ListView) findViewById(R.id.lista);
+        VideoView videoView = findViewById(R.id.video_view);
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.video;
+        Uri uri = Uri.parse(videoPath);
+        videoView.setVideoURI(uri);
 
-        List<String> nombres = new ArrayList<String>();
-
-        nombres.add("Diego");
-
-        ArrayAdapter<String> adaptador=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,nombres);
-
-        lista.setAdapter(adaptador);
+        MediaController mediaController = new MediaController(this);
+        videoView.setMediaController(mediaController);
+        mediaController.setAnchorView(videoView);
+        videoView.start();
     }
 }

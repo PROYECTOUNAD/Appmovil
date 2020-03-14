@@ -1,24 +1,15 @@
 package app.movil.pmcaso11;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
 import android.content.ContentValues;
-import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class registroUsu extends AppCompatActivity {
 
@@ -68,9 +59,6 @@ public class registroUsu extends AppCompatActivity {
         String ciudades[]={"BOGOTA","MEDELLIN","CALI"};
         ArrayAdapter<String> document2=new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,ciudades);
         ciudad.setAdapter(document2);
-
-
-
 
     }
 

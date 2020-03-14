@@ -23,9 +23,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 
-
 public class RecoveryPassword extends AppCompatActivity implements OnClickListener{
-
     Session session = null;
     ProgressDialog pdialog = null;
     Context context = null;
@@ -35,15 +33,12 @@ public class RecoveryPassword extends AppCompatActivity implements OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
+        setContentView(R.layout.activity_recovery_password);
 
         context = this;
 
         Button login = (Button) findViewById(R.id.btn_submit);
         reciep = (EditText) findViewById(R.id.et_to);
-        sub = (EditText) findViewById(R.id.et_sub);
-        msg = (EditText) findViewById(R.id.et_text);
 
         login.setOnClickListener(this);
     }
@@ -51,8 +46,8 @@ public class RecoveryPassword extends AppCompatActivity implements OnClickListen
     @Override
     public void onClick(View v) {
         rec = reciep.getText().toString();
-        subject = sub.getText().toString();
-        textMessage = msg.getText().toString();
+        subject = "RECUPERACIÓN DE CLAVE GREEN ZONE";
+        textMessage = "Clave: 12345";
 
         Properties props = new Properties();
         props.put("mail.smtp.host", "smtp.gmail.com");
