@@ -23,9 +23,7 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 
-
 public class RecoveryPassword extends AppCompatActivity implements OnClickListener{
-
     Session session = null;
     ProgressDialog pdialog = null;
     Context context = null;
@@ -41,7 +39,6 @@ public class RecoveryPassword extends AppCompatActivity implements OnClickListen
 
         Button login = (Button) findViewById(R.id.btn_submit);
         reciep = (EditText) findViewById(R.id.et_to);
-
 
         login.setOnClickListener(this);
     }
