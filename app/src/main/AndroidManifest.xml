@@ -43,7 +43,6 @@
         <activity android:name=".principal" />
         <activity android:name=".categorias" />
         <activity android:name=".bienvenido" />
-        <activity android:name=".cargar" />
         <activity android:name=".login" />
         <activity android:name=".registroUsu" />
         <activity android:name=".MainActivity">

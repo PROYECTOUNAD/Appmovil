@@ -14,10 +14,17 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class registroUsu extends AppCompatActivity {
 
@@ -28,12 +35,14 @@ public class registroUsu extends AppCompatActivity {
     private EditText identificacion, nombre, apellido, direccion, email, telefono, password;
     private Integer tipod;
     private Integer country;
-    private Integer ciud;
+    private Integer ciudades;
     private Button registro;
 
     private final Integer rol=1;
 
+
     private FirebaseAuth mAuth;
+    FirebaseFirestore  mfirestore;
 
 
 
@@ -47,10 +56,15 @@ public class registroUsu extends AppCompatActivity {
         apellido = (EditText) findViewById(R.id.apeUsuario);
         direccion = (EditText) findViewById(R.id.direccion);
         email = (EditText) findViewById(R.id.email);
-       telefono = (EditText) findViewById(R.id.telefono);
+        telefono = (EditText) findViewById(R.id.telefono);
         password = (EditText) findViewById(R.id.password);
 
+
+
         registro=(Button)findViewById(R.id.regis);
+
+
+        mfirestore=FirebaseFirestore.getInstance();
         mAuth = FirebaseAuth.getInstance();
 
         //Spinner Tipo de Documento
@@ -90,6 +104,8 @@ public class registroUsu extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
+
                 String correo, pass;
 
                 correo=email.getText().toString();
@@ -104,18 +120,16 @@ public class registroUsu extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     // Sign in success, update UI with the signed-in user's information
 
-                                    Toast.makeText(registroUsu.this, "Usuario Registrado Correctamente.",
-                                            Toast.LENGTH_LONG).show();
+
                                     Intent second = new Intent(registroUsu.this,principal.class);
                                     startActivity(second);
+                                    crearDatos();
                                     Log.d(TAG, "Usuario Creado Exitosamente");
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     updateUI(user);
                                 } else {
                                     // If sign in fails, display a message to the user.
                                     Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                    Toast.makeText(registroUsu.this, "Imposible Registrarse.",
-                                            Toast.LENGTH_SHORT).show();
                                     updateUI(null);
                                 }
 
@@ -130,6 +144,68 @@ public class registroUsu extends AppCompatActivity {
 
 
     }
+
+    private void crearDatos(){
+
+        String nomb,ape,doc,tele,pass,direc,mail,country,ident;
+        int city=0;
+        nomb=nombre.getText().toString();
+        ape=apellido.getText().toString();
+        tele=telefono.getText().toString();
+        doc=identificacion.getText().toString();
+        int ciud = ciudad.getSelectedItemPosition();
+        int paises=pais.getSelectedItemPosition();
+        int tipodoc=despliegue.getSelectedItemPosition();
+
+
+
+
+        pass=password.getText().toString();
+        direc=direccion.getText().toString();
+        mail=email.getText().toString();
+
+
+        Map<String,Object>map=new HashMap<>();
+
+        map.put("nombreUsuario",nomb);
+        map.put("apellidoUsuario",ape);
+        map.put("idDocumento",doc);
+        map.put("idCiudad",ciud);
+        map.put("idPais",paises);
+        map.put("idRol","Usuario");
+        map.put("tipoDocumento",tipodoc);
+        map.put("telefonoUsuario",tele);
+        map.put("password",pass);
+        map.put("direccionUsuario",direc);
+        map.put("emailUsuario",mail);
+
+
+
+       //mfirestore.collection("Usuario").document().set(map);
+        mfirestore.collection("Usuario").add(map).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+            @Override
+            public void onSuccess(DocumentReference documentReference) {
+
+
+                Toast.makeText(registroUsu.this, "Usuario Registrado Correctamente.",
+                        Toast.LENGTH_LONG).show();
+
+
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+
+                Toast.makeText(registroUsu.this, "Hubo Algun Error al Registrar el Usuario.",
+                        Toast.LENGTH_LONG).show();
+
+            }
+        });
+
+
+
+    }
+
 
     private void updateUI(FirebaseUser user) {
 
