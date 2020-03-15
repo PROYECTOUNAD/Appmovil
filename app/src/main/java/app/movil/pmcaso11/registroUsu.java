@@ -1,27 +1,27 @@
 package app.movil.pmcaso11;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
-import android.content.ContentValues;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
-import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class registroUsu extends AppCompatActivity {
 
+    private static final String TAG ="" ;
     private Spinner despliegue;
     private Spinner pais;
     private Spinner ciudad;
@@ -29,8 +29,12 @@ public class registroUsu extends AppCompatActivity {
     private Integer tipod;
     private Integer country;
     private Integer ciud;
+    private Button registro;
 
     private final Integer rol=1;
+
+    private FirebaseAuth mAuth;
+
 
 
     @Override
@@ -43,18 +47,25 @@ public class registroUsu extends AppCompatActivity {
         apellido = (EditText) findViewById(R.id.apeUsuario);
         direccion = (EditText) findViewById(R.id.direccion);
         email = (EditText) findViewById(R.id.email);
-        telefono = (EditText) findViewById(R.id.telefono);
+       telefono = (EditText) findViewById(R.id.telefono);
         password = (EditText) findViewById(R.id.password);
 
+        registro=(Button)findViewById(R.id.regis);
+        mAuth = FirebaseAuth.getInstance();
 
         //Spinner Tipo de Documento
+
 
         despliegue = (Spinner) findViewById(R.id.tipodoc);
         String Documento[]={"CEDULA","PASAPORTE","TI"};
         ArrayAdapter<String> document=new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,Documento);
         despliegue.setAdapter(document);
 
-        //Spinner Pais
+
+
+       //Spinner Pais
+
+
 
         pais = (Spinner) findViewById(R.id.pais);
         String paises[]={"COLOMBIA"};
@@ -62,6 +73,9 @@ public class registroUsu extends AppCompatActivity {
         pais.setAdapter(document1);
 
         //Spinner Ciudad
+
+
+
 
 
         ciudad = (Spinner) findViewById(R.id.ciudad);
@@ -72,60 +86,65 @@ public class registroUsu extends AppCompatActivity {
 
 
 
-    }
+        registro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String correo, pass;
+
+                correo=email.getText().toString();
+                pass=password.getText().toString();
+
+                mAuth.createUserWithEmailAndPassword(correo, pass)
 
 
-        public void registrar(View view){
+                        .addOnCompleteListener(registroUsu.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    // Sign in success, update UI with the signed-in user's information
+
+                                    Toast.makeText(registroUsu.this, "Usuario Registrado Correctamente.",
+                                            Toast.LENGTH_LONG).show();
+                                    Intent second = new Intent(registroUsu.this,principal.class);
+                                    startActivity(second);
+                                    Log.d(TAG, "Usuario Creado Exitosamente");
+                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    updateUI(user);
+                                } else {
+                                    // If sign in fails, display a message to the user.
+                                    Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                                    Toast.makeText(registroUsu.this, "Imposible Registrarse.",
+                                            Toast.LENGTH_SHORT).show();
+                                    updateUI(null);
+                                }
+
+                                // ...
+                            }
+                        });
 
 
-            AdminSqliteOpenHelper admin =new AdminSqliteOpenHelper(this,"DB15",null,1); // Creacion de base de datos
-            SQLiteDatabase db =admin.getWritableDatabase();
-
-            String seleccion=despliegue.getSelectedItem().toString();
-            String seleccion1=pais.getSelectedItem().toString();
-            String seleccion2=ciudad.getSelectedItem().toString();
-            String iden=identificacion.getText().toString();
-            String nom=nombre.getText().toString();
-            String ape=apellido.getText().toString();
-            String dir=direccion.getText().toString();
-            String correo=email.getText().toString();
-            String tel=telefono.getText().toString();
-            String pass=password.getText().toString();
-
-            int cc=Integer.parseInt(iden);
-            int tele=Integer.parseInt(tel);
-
-
-            ContentValues datos=new ContentValues();
-
-            datos.put("idDocumento",cc);
-            datos.put("tipoDocumento",seleccion);
-            datos.put("idRol",rol);
-            datos.put("nombreUsuario",nom);
-            datos.put("apellidoUsuario",ape);
-            datos.put("idCiudad",seleccion2);
-            datos.put("idPais",seleccion1);
-            datos.put("direcUsuario",dir);
-            datos.put("emailUsuario",correo);
-            datos.put("telefonoUsuario",tele);
-            datos.put("passUsuario",pass);
-
-            db.insert("usuario",null, datos);
-            db.close();
-
-
-            Toast.makeText(this,"REGISTRO EXITOSO",Toast.LENGTH_LONG).show();
-
+            }
+        });
 
 
 
     }
 
+    private void updateUI(FirebaseUser user) {
+
+        if(user !=null){
+
+            Intent second = new Intent(registroUsu.this,principal.class);
+            startActivity(second);
+
+            finish();
+
+        }
 
 
 
-
-
+    }
 
 
 

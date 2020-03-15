@@ -43,13 +43,13 @@
         android:ems="10"
         android:hint="Apellido"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/registrar"
+        app:layout_constraintBottom_toTopOf="@+id/registrarse1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/registrar"
+        android:id="@+id/regis"
         android:layout_width="209dp"
         android:layout_height="41dp"
         android:layout_marginBottom="32dp"

@@ -8,11 +8,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class principal extends AppCompatActivity {
 
     private Button zonas;
     private Button aprende;
+    private Button cerrar;
 
+    FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +25,24 @@ public class principal extends AppCompatActivity {
 
         zonas=(Button)findViewById(R.id.zonasR);
         aprende=(Button)findViewById(R.id.aprendeR);
+        cerrar=(Button)findViewById(R.id.cerrarSesion);
+
+        //Valida el usuario nuevo en la sesion
+        mAuth=FirebaseAuth.getInstance();
+
+
+        // Cerrar la Sesion de Usuario
+        cerrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(principal.this,MainActivity.class));
+            }
+        });
+
+
+
+
 
         zonas.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,6 +1,7 @@
 package app.movil.pmcaso11;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +10,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.Properties;
 
@@ -24,80 +30,85 @@ import javax.mail.internet.MimeMessage;
 
 
 
-public class RecoveryPassword extends AppCompatActivity implements OnClickListener{
+public class RecoveryPassword extends AppCompatActivity {
 
-    Session session = null;
-    ProgressDialog pdialog = null;
-    Context context = null;
-    EditText reciep, sub, msg;
-    String rec, subject, textMessage;
+
+    private EditText email;
+    private Button enviar;
+    private String mail;
+    private FirebaseAuth mAuth;
+    private ProgressDialog progreso;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recovery_password);
 
-        context = this;
+        email=(EditText)findViewById(R.id.correor);
+        enviar=(Button)findViewById(R.id.envioCorreo);
 
-        Button login = (Button) findViewById(R.id.btn_submit);
-        reciep = (EditText) findViewById(R.id.et_to);
+        mAuth = FirebaseAuth.getInstance();
+        progreso=new ProgressDialog(this);
 
 
-        login.setOnClickListener(this);
-    }
 
-    @Override
-    public void onClick(View v) {
-        rec = reciep.getText().toString();
-        subject = "RECUPERACIÓN DE CLAVE GREEN ZONE";
-        textMessage = "Clave: 12345";
+        enviar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        Properties props = new Properties();
-        props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("mail.smtp.socketFactory.port", "465");
-        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.port", "465");
+               mail=email.getText().toString();
 
-        session = Session.getDefaultInstance(props, new Authenticator() {
-            protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("claudiamar0677@gmail.com", "claudiamar0677*");
+               if(!mail.isEmpty()){
+
+                    progreso.setMessage("Enviando.. Por Favor Espera");
+                    progreso.setCanceledOnTouchOutside(false);
+                    progreso.show();
+                   resetPassword();
+
+               }else{
+
+                   Toast.makeText(RecoveryPassword.this,"Debe ingresar una Direccion de Correo",Toast.LENGTH_SHORT).show();
+
+               }
+
+
+
             }
         });
 
-        pdialog = ProgressDialog.show(context, "", "Sending Mail...", true);
 
-        RetreiveFeedTask task = new RetreiveFeedTask();
-        task.execute();
+
+
+
     }
 
-    class RetreiveFeedTask extends AsyncTask<String, Void, String> {
+    private void resetPassword() {
 
+
+    mAuth.setLanguageCode("es");
+    mAuth.sendPasswordResetEmail(mail).addOnCompleteListener(new OnCompleteListener<Void>() {
         @Override
-        public String doInBackground(String... params) {
+        public void onComplete(@NonNull Task<Void> task) {
 
-            try{
-                Message message = new MimeMessage(session);
-                message.setFrom(new InternetAddress("claudiamar0677@gmail.com"));
-                message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(rec));
-                message.setSubject(subject);
-                message.setContent(textMessage, "text/html; charset=utf-8");
-                Transport.send(message);
-            } catch(MessagingException e) {
-                e.printStackTrace();
-            } catch(Exception e) {
-                e.printStackTrace();
+            if(task.isSuccessful()){
+
+
+
+                Toast.makeText(RecoveryPassword.this,"Se ha Enviado un Correo de Recuperacion de Password",Toast.LENGTH_SHORT).show();
+
+
+            }else{
+
+                Toast.makeText(RecoveryPassword.this,"No se Pudo Enviar el Correo de Recuperacion ",Toast.LENGTH_SHORT).show();
+
             }
-            return null;
-        }
 
-        @Override
-        protected void onPostExecute(String result) {
-            pdialog.dismiss();
-            reciep.setText("");
-            msg.setText("");
-            sub.setText("");
-            Toast.makeText(getApplicationContext(), "Message sent", Toast.LENGTH_LONG).show();
+            progreso.dismiss();
+
         }
+    });
+
     }
+
+
 }
