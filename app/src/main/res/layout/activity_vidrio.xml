@@ -6,9 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".activity_vidrio">
 
+    <Button
+        android:id="@+id/vidrio2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#039235"
+        android:text="Aprende a reciclar vidrio"
+        android:textColor="@color/colorBlanco"
+        app:layout_constraintTop_toTopOf="parent" />
 
-<ImageView
-        android:id="@+id/paper"
+
+    <ImageView
+        android:id="@+id/vidrio"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:srcCompat="@drawable/vidrio3" />
