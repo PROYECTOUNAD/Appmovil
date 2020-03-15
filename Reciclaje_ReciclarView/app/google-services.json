@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "851236207561",
+    "firebase_url": "https://reciclajereciclarview.firebaseio.com",
+    "project_id": "reciclajereciclarview",
+    "storage_bucket": "reciclajereciclarview.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:851236207561:android:6efafb1dc00c5c8bee4618",
+        "android_client_info": {
+          "package_name": "com.example.reciclaje_reciclarview"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "851236207561-63uuegkhpp2bd529gvcji5h8jntkonjg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.reciclaje_reciclarview",
+            "certificate_hash": "18d973caf59c94d9eb56c66f2d2b730632a06fec"
+          }
+        },
+        {
+          "client_id": "851236207561-ma17uifrd41ho60tkc9p5es6r6hj23ur.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApioa4pAMkskXcXSWF3OJX8eub0bUgQYQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "851236207561-ma17uifrd41ho60tkc9p5es6r6hj23ur.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
