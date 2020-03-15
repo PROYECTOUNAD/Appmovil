@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/npuntosR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:text="Información" />
+    <Button
+        android:id="@+id/consultarBonoPunt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Consultar Puntos y Bonos"
+        android:background="@color/colorPrimary"
+        android:textColor="#ffffff"
+        android:layout_marginTop="50dp"/>
+
+    <Button
+        android:id="@+id/ingresarReci"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ingresar Reciclaje"
+        android:background="@color/colorPrimary"
+        android:textColor="#ffffff"
+        android:layout_marginTop="20dp"/>
+
+</LinearLayout>

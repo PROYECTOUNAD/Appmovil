@@ -43,6 +43,9 @@
         <activity android:name=".cargar" />
         <activity android:name=".login" />
         <activity android:name=".registroUsu" />
+        <activity android:name=".infoReciclajeUsu"/>
+        <activity android:name=".consultarBonPun"/>
+        <activity android:name=".reciclaje"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
