@@ -23,7 +23,7 @@
     <string name="recicla_Plastico">RECICLAJE DE PLASTICO</string>
     <string name="salir">SALIR</string>
     <string name="recuperarC">RECUPERAR CLAVE</string>
-    <string name="enviarC">RESET PASSWORD</string>
+    <string name="enviarC">Recuperar Password</string>
     <string name="recordarC">Recordar Clave</string>
 
 </resources>
