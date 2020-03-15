@@ -25,5 +25,6 @@
     <string name="recuperarC">RECUPERAR CLAVE</string>
     <string name="enviarC">RESET PASSWORD</string>
     <string name="recordarC">Recordar Clave</string>
+    <string name="title_activity_paper">activity_paper</string>
 
 </resources>
