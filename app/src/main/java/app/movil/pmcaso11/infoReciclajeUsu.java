@@ -83,7 +83,6 @@ public class infoReciclajeUsu extends AppCompatActivity {
             public  void onSuccess(DocumentReference documentReference) {
                 Toast.makeText(infoReciclajeUsu.this, "Registro guardado exitosamente",Toast.LENGTH_SHORT).show();
 
-
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
