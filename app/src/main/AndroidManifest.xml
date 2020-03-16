@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="app.movil.pmcaso11">
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the 'MyLocation' functionality.
     -->
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -19,7 +17,12 @@
         android:roundIcon="@mipmap/ic_reciclaje_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".activity_vidrio"></activity>
+        <activity android:name=".activity_plastic" />
+        <activity
+            android:name=".activity_paper"
+            android:label="@string/title_activity_paper"
+            android:theme="@style/AppTheme.NoActionBar" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -35,12 +38,11 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".zonas"/>
+        <activity android:name=".zonas" />
         <activity android:name=".RecoveryPassword" />
         <activity android:name=".principal" />
         <activity android:name=".categorias" />
         <activity android:name=".bienvenido" />
-        <activity android:name=".cargar" />
         <activity android:name=".login" />
         <activity android:name=".registroUsu" />
         <activity android:name=".infoReciclajeUsu"/>
