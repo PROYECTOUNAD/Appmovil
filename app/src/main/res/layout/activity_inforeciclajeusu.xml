@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".infoReciclajeUsu">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+     <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <EditText
+    android:id="@+id/descReciR"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Descripción"
+    android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/categoriaR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Categoria"
+        android:layout_marginTop="20dp"/>
+
+
+    <EditText
+        android:id="@+id/zonasR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Zona"
+        android:layout_marginTop="20dp"/>
+    <EditText
+        android:id="@+id/documentoR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Cédula Usuario"
+        android:layout_marginTop="20dp"/>
+    <EditText
+        android:id="@+id/medidaR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Medida"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/cantidadR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Cantidad"
+        android:layout_marginTop="20dp"/>
+
+    <EditText
+        android:id="@+id/valorR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Valor"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:id="@+id/registrareciR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Guardar"
+        android:background="@color/colorPrimary"
+        android:textColor="#ffffff"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
