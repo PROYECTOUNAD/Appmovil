@@ -26,6 +26,7 @@ public class infoReciclajeUsu extends AppCompatActivity {
     EditText EDescReciR, ECategoriaR,EzonasR,EdocumentoR,EMedidaR,ECantidadR,EvalorR;
 
     Button BregistrareciR;
+    int  result=0, totalVBono=0;
 
     FirebaseFirestore mFirestore;
 
@@ -62,12 +63,17 @@ public class infoReciclajeUsu extends AppCompatActivity {
 
     private  void insertarDatos () {
         String descReciclaje = EDescReciR.getText().toString();
-        String cantidadReciclaje = ECantidadR.getText().toString();
+        int cantidadReciclaje = ECantidadR.length();
         String idCategoria = ECantidadR.getText().toString();
         String idDocumento = EdocumentoR.getText().toString();
         String idMedida = EMedidaR.getText().toString();
         String idZona = EzonasR.getText().toString();
         String valorReciclaje = EvalorR.getText().toString();
+
+        result = (cantidadReciclaje * 2);
+        if(result > 100){
+            totalVBono = result *100;
+        }
 
         Map<String, Object> map =new HashMap<>();
         map.put("descReciclaje", descReciclaje);
@@ -81,7 +87,10 @@ public class infoReciclajeUsu extends AppCompatActivity {
         mFirestore.collection("Reciclaje").add(map).addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
             @Override
             public  void onSuccess(DocumentReference documentReference) {
-                Toast.makeText(infoReciclajeUsu.this, "Registro guardado exitosamente",Toast.LENGTH_SHORT).show();
+                //Toast.makeText(infoReciclajeUsu.this, "Registro guardado exitosamente",Toast.LENGTH_SHORT).show();
+                Toast.makeText(infoReciclajeUsu.this, "Por reciclar esa cantidad podrias ganar: "+result+ " Puntos. "+"\n"+"Por reciclar te ganaste un bono de : "+totalVBono,Toast.LENGTH_SHORT).show();
+                //Toast.makeText(infoReciclajeUsu.this, "Por reciclar te ganaste un bono de : "+totalVBono+ " en bono",Toast.LENGTH_SHORT).show();
+               // insertarDatos();
 
             }
         }).addOnFailureListener(new OnFailureListener() {

@@ -9,11 +9,13 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class consultarBonPun extends AppCompatActivity {
 
@@ -29,22 +31,26 @@ public class consultarBonPun extends AppCompatActivity {
 
         mFirestore = FirebaseFirestore.getInstance();
 
-        EndocumentoR = findViewById(R.id.ndocumentoR);
+        //EndocumentoR = findViewById(R.id.ndocumentoR);
         TnpuntosR = findViewById(R.id.npuntosR);
         TnbonoR = findViewById(R.id.nbonoR);
-        bconsultarR = findViewById(R.id.bconsultarR);
+        //bconsultarR = findViewById(R.id.bconsultarR);
 
+        consultarBono();
+        consultarPunto();
+     /*
         bconsultarR.setOnClickListener(new View.OnClickListener() {
             @Override
             public  void onClick(View v) {
 
-                consultarDatos();
+                consultarBono();
+                consultarPunto();
 
             }
-        });
+        });*/
 
     }
-    private void consultarDatos(){
+    private void consultarBono(){
         mFirestore.collection("Bono").document("80215568").addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public
@@ -63,31 +69,31 @@ public class consultarBonPun extends AppCompatActivity {
                         valorBono = documentSnapshot.getLong("valorBono");
                     }
 
-                    TnbonoR.setText("La cantidad que tiene en bono el usuario con número de documento: "+idDocumento+" "+ " es de "+ valorBono);
+                    TnbonoR.setText("El valors que tiene en bono es de: "+ valorBono);
                 }
 
             }
         });
+    }
 
-        mFirestore.collection ("Puntos").document("80215568").addSnapshotListener(new EventListener<DocumentSnapshot>() {
+    private void consultarPunto(){
+        mFirestore.collection("Puntos").document("80215568").addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
-            public
-            void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
+            public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException e) {
 
                 if(documentSnapshot.exists()){
-
                     String idDocumento = " ";
-                    long cantidadPuntos = 0;
+                    long valorPuntos = 0;
 
                     if(documentSnapshot.contains("idDocumento")){
                         idDocumento = documentSnapshot.getString("idDocumento");
                     }
 
                     if(documentSnapshot.contains("cantidadPuntos")){
-                        cantidadPuntos = documentSnapshot.getLong("cantidadPuntos");
+                        valorPuntos = documentSnapshot.getLong("cantidadPuntos");
                     }
 
-                    TnpuntosR.setText("La cantidad que tiene en Puntos el usuario con número de documento: "+idDocumento+" "+ " es de "+ cantidadPuntos);
+                    TnpuntosR.setText("La cantidad que tiene en puntos es de: "+ valorPuntos);
                 }
 
             }
@@ -95,5 +101,8 @@ public class consultarBonPun extends AppCompatActivity {
 
 
 
+
+
     }
+
 }

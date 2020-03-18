@@ -4,15 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".activity_plastic">
 
     <Button
         android:id="@+id/paper2"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#039235"
         android:text="Aprende a reciclar plástico"
-        android:textColor="@color/colorBlanco" />
+        android:textColor="@color/colorBlanco"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/paper" />
 
     <ImageView
         android:id="@+id/paper"
