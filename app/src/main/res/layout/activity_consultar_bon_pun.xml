@@ -9,7 +9,7 @@
         android:id="@+id/paper"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/estrella" />
+        app:srcCompat="@drawable/aprenderreciclar" />
 
     <TextView
         android:id="@+id/npuntosR"

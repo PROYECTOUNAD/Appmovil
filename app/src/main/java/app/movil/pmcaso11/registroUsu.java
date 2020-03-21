@@ -1,8 +1,5 @@
 package app.movil.pmcaso11;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -39,7 +39,6 @@ public class registroUsu extends AppCompatActivity {
     private Button registro;
 
     private final Integer rol=1;
-
 
     private FirebaseAuth mAuth;
     FirebaseFirestore  mfirestore;

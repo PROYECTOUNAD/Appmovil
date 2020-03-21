@@ -7,69 +7,53 @@
     android:layout_height="match_parent"
     tools:context=".principal">
 
-    <LinearLayout
-        android:id="@+id/linearLayout3"
-        android:layout_width="414dp"
-        android:layout_height="226dp"
-        android:layout_marginTop="36dp"
-        android:baselineAligned="false"
-        android:hapticFeedbackEnabled="false"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="match_parent"
-            android:layout_height="213dp"
-            app:srcCompat="@drawable/reciclajes" />
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="213dp"
+        android:layout_marginBottom="48dp"
+        app:layout_constraintBottom_toTopOf="@+id/aprendeR"
+        app:srcCompat="@drawable/reciclajes"
+        tools:layout_editor_absoluteX="0dp" />
 
-    <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="370dp"
-        android:layout_height="240dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="76dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
 
-        <Button
-            android:id="@+id/reciclarR"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20dp"
-            android:autoText="false"
-            android:backgroundTint="#039235"
-            android:lineSpacingExtra="8sp"
-            android:text="Acumula Puntos"
-            android:textColor="@color/colorBlanco" />
+    <Button
+        android:id="@+id/reciclarR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
+        android:autoText="false"
+        android:backgroundTint="#039235"
+        android:lineSpacingExtra="8sp"
+        android:text="Acumula Puntos"
+        android:textColor="@color/colorBlanco"
+        app:layout_constraintBottom_toTopOf="@+id/cerrarSesion"
+        tools:layout_editor_absoluteX="0dp" />
 
-        <Button
-            android:id="@+id/zonasR"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:backgroundTint="#039235"
-            android:lineSpacingExtra="8sp"
-            android:text="Zonas de Reciclaje"
-            android:textColor="@color/colorBlanco" />
+    <Button
+        android:id="@+id/zonasR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="#039235"
+        android:lineSpacingExtra="8sp"
+        android:text="Zonas de Reciclaje"
+        android:textColor="@color/colorBlanco"
+        app:layout_constraintBottom_toTopOf="@+id/reciclarR"
+        tools:layout_editor_absoluteX="0dp" />
 
-        <Button
-            android:id="@+id/aprendeR"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:backgroundTint="#039235"
-            android:lineSpacingExtra="8sp"
-            android:text="Aprende a Reciclar"
-            android:textColor="@color/colorBlanco" />
-
-    </LinearLayout>
+    <Button
+        android:id="@+id/aprendeR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        android:backgroundTint="#039235"
+        android:lineSpacingExtra="8sp"
+        android:text="Aprende a Reciclar"
+        android:textColor="@color/colorBlanco"
+        app:layout_constraintBottom_toTopOf="@+id/zonasR"
+        tools:layout_editor_absoluteX="0dp" />
 
     <Button
         android:id="@+id/cerrarSesion"

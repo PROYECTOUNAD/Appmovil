@@ -1,7 +1,6 @@
 package app.movil.pmcaso11;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -9,13 +8,10 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
-import com.google.firebase.firestore.QuerySnapshot;
 
 public class consultarBonPun extends AppCompatActivity {
 
@@ -69,7 +65,7 @@ public class consultarBonPun extends AppCompatActivity {
                         valorBono = documentSnapshot.getLong("valorBono");
                     }
 
-                    TnbonoR.setText("El valors que tiene en bono es de: "+ valorBono);
+                    TnbonoR.setText(" Valor en Bonos: "+ valorBono);
                 }
 
             }
@@ -93,7 +89,7 @@ public class consultarBonPun extends AppCompatActivity {
                         valorPuntos = documentSnapshot.getLong("cantidadPuntos");
                     }
 
-                    TnpuntosR.setText("La cantidad que tiene en puntos es de: "+ valorPuntos);
+                    TnpuntosR.setText(" Cantidad de Puntos:"+ valorPuntos);
                 }
 
             }
